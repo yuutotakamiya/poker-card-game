@@ -52,10 +52,12 @@ namespace Poker_game
             string result = DetermineHand(grouped);
             Console.WriteLine($"判定結果: {result}");
         }
+
+        //ランダムで生成されたカードの
         static string DetermineHand(List<int> grouped)
         {
 
-            //入力された値の判定
+            //ランダムで生成された値の判定
             if (grouped.Contains(4))
             {
                 return "フォーカード"; // 4つの数値が同じ
