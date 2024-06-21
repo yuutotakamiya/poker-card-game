@@ -13,8 +13,9 @@ namespace Poker_game
             while (true)
             {
                 Console.WriteLine("0を入力すると終了します。1を入力するとゲームを開始します");
-                var startInput = Console.ReadLine();
+                string startInput = Console.ReadLine();
 
+                //0で終了、1でゲーム開始の判定
                 if (startInput == "0")
                 {
                     Console.WriteLine("ENTERキーを押してください。");
