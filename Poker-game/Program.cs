@@ -10,6 +10,29 @@ namespace Poker_game
     {
         static void Main(string[] args)
         {
+            while (true)
+            {
+                Console.WriteLine("0を入力すると終了します。1を入力するとゲームを開始します");
+                var startInput = Console.ReadLine();
+
+                if (startInput == "0")
+                {
+                    Console.WriteLine("ゲームを終了します。");
+                    break;
+                }
+                else if (startInput == "1")
+                {
+                    PlayGame();
+                }
+                else
+                {
+                    Console.WriteLine("無効な入力です。0または1を入力してください。");
+                }
+            }
+            Console.ReadLine();
+        }
+        static void PlayGame()
+        {
             Console.WriteLine("1～4の数字を4つ入力してください");
 
             // 数値の入力を取得
@@ -30,6 +53,33 @@ namespace Poker_game
                     }
                 }
             }
+            // 数値の出現頻度を数える
+            var grouped = numbers.GroupBy(n => n).Select(g => g.Count()).ToList();
+
+            string result;
+
+            if (grouped.Contains(4))
+            {
+                result = "フォーカード"; // 4つの数値が同じ
+            }
+            else if (grouped.Contains(3))
+            {
+                result = "スリーカード"; // 3つの数値が同じ
+            }
+            else if (grouped.Count == 2 && grouped.Contains(2))
+            {
+                result = "ツーペア"; // 2つの数値が同じ×2
+            }
+            else if (grouped.Contains(2))
+            {
+                result = "ワンペア"; // 2つの数値が同じ
+            }
+            else
+            {
+                result = "ノーペア"; // 4つの数値が全て違う
+            }
+
+            Console.WriteLine($"判定結果: {result}");
         }
     }
 }
