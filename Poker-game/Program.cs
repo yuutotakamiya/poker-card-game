@@ -31,10 +31,10 @@ namespace Poker_game
             }
             Console.ReadLine();
         }
+
+        //ポーカーゲームの処理
         static void PlayGame()
         {
-            Console.WriteLine("1～4の数字を4つ入力してください");
-
             // 数値の入力を取得
             int[] numbers = new int[4];
             for (int i = 0; i < 4; i++)
