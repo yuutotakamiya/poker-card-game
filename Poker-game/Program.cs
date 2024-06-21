@@ -17,7 +17,7 @@ namespace Poker_game
 
                 if (startInput == "0")
                 {
-                    Console.WriteLine("ゲームを終了します。");
+                    Console.WriteLine("ENTERキーを押してください。");
                     break;
                 }
                 else if (startInput == "1")
@@ -58,6 +58,7 @@ namespace Poker_game
 
             string result;
 
+            //入力された値の判定
             if (grouped.Contains(4))
             {
                 result = "フォーカード"; // 4つの数値が同じ
